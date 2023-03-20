@@ -12,6 +12,7 @@ external interface WelcomeProps : Props {
     var name: String
 }
 
+val message: String = "Error!"
 val Welcome = FC<WelcomeProps> { props ->
     var name by useState(props.name)
     div {
@@ -32,6 +33,13 @@ val Welcome = FC<WelcomeProps> { props ->
         value = name
         onChange = { event ->
             name = event.target.value
+        }
+    }
+    div {
+//        className = "container"
+        div {
+//            className = "alert"
+            +message
         }
     }
 }
